@@ -1,0 +1,23 @@
+{
+  "name": "drupal/wxt_api_store",
+  "description": "wxt_bootstrap subtheme for the API Store",
+  "type": "drupal-theme",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://github.com/stephane-berube/wxt_api_store",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://github.com/stephane-berube/wxt_api_store/issues",
+    "source": "https://github.com/stephane-berube/wxt_api_store"
+  },
+  "require": {
+    "drupal/core": "^8.6"
+  },
+  "authors": [
+    {
+      "name": "Stephane Berube",
+      "homepage": "https://github.com/stephane-berube",
+      "role": "Maintainer"
+    }
+  ]
+}
