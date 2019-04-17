@@ -1,0 +1,30 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+  <div class="brand col-xs-5 col-md-4">
+    {% if language == 'en' %}
+    <a href="https://www.canada.ca/en.html">
+      <img id="header-logo" src='{{ logo_svg }}' alt="{{ 'Government of Canada'|t }}" />
+    </a>
+    {% else %}
+    <a href="https://www.canada.ca/fr.html">
+      <img id="header-logo" src='{{ logo_svg }}' alt="{{ 'Gouvernement du Canada'|t }}" />
+    </a>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: {}
+global-scripts:
+  version: 1.x
+  js:
+    js/sso.js: {}
+    js/i18n.js: {}
+    # Handlebar
+    js/lib/handlebars.runtime.min.js: {}
+    js/handlebars/helpers.js: {}
+    # API listing
+    js/handlebars/compiled/api-listing.js: {}
+    js/api-listing.js: {}
+    # Subscriptions
+    js/handlebars/compiled/subscriptions.js: {}
+    js/subscriptions.js: {}

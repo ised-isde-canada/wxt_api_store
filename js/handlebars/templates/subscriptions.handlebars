@@ -1,0 +1,43 @@
+<div class="table-responsive">
+  <table class="table panel panel-default">
+      <thead class="panel-heading">
+        <tr>
+          <th>{{i18n "subscriptions.subscription"}}</th>
+          <th>{{i18n "subscriptions.apiTitle"}}</th>
+          <th>{{i18n "subscriptions.key"}}</th>
+          <th>{{i18n "subscriptions.status"}}</th>
+          <th>{{i18n "subscriptions.createdDate"}}</th>
+        </tr>
+      </thead>
+
+      <tbody class="panel-body">
+        {{#each tenants as |tenant|}}
+          {{#ifSubscribedToTenant tenant.applications.applications}}
+          <tr>
+            <td style="font-weight: bold" colspan="5">{{tenant.description}}</td>
+          </tr>
+          {{/ifSubscribedToTenant}}
+
+          {{#each tenant.applications.applications as |application|}}
+          <tr class="odd">
+            <td>
+              {{#each application.application.links as |link|}}
+              {{#ifSelfLink link}}
+              <a href="{{link.href}}">{{application.application.name}}</a>  
+              {{/ifSelfLink}}
+              {{/each}}
+            </td>
+
+            <td>{{application.application.apiname}}</td>
+
+            <td>{{#ifIsNotPending application.application.state}}{{application.application.user_key}}{{/ifIsNotPending}}</td>
+
+            <td>{{application.application.state}}</td>
+
+            <td class="nowrap">{{formatDate application.application.created_at}}</td>
+          </tr>
+          {{/each}}
+          {{/each}}
+      </tbody>
+  </table>
+</div>

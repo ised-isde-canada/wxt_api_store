@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for page title block.
+ *
+ * @ingroup templates
+ */
+#}
+{% extends "block--bare.html.twig" %}
+
+{% block content %}
+  {{ content }}
+
+  {% if logged_in %}
+  <div class="api-store-nav profileInfo">
+    <ol class="noStyleList">
+      <li class="api-store-nav__item api-store-nav__item--username">{{ user.displayname }}</li>
+      {% if language == 'en' %}
+      <li class="api-store-nav__item api-store-nav__item--subscriptions"><a href="/en/subscriptions">Subscriptions</a></li>
+      <li class="api-store-nav__item api-store-nav__item--logout">&nbsp;|&nbsp;<a href="/en/user/logout">Logout</a></li>
+      {% else %}
+      <li class="api-store-nav__item api-store-nav__item--subscriptions"><a href="/fr/abonnements">Abonnements</a></li>
+      <li class="api-store-nav__item api-store-nav__item--logout">&nbsp;|&nbsp;<a href="/fr/user/logout">Déconnexion</a></li>
+      {% endif %}
+    </ol>
+  </div>
+  {% endif %}
+{% endblock %}

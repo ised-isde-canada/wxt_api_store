@@ -1,0 +1,30 @@
+  <table id="apis" class="apis ised-tables tbl-gridify" data-wb-tables='{"ordering": false, "bPaginate" : false}'>
+    <caption class="wb-inv">
+      APIs
+    </caption>
+
+    <thead>
+      <tr>
+        <th>API</th>
+      </tr>
+    </thead>
+
+    <tbody class="row wb-eqht">
+    {{#each this as |tenant|}}
+      {{#each tenant.apis}}
+        <tr class="col-xs-12 col-sm-6 col-md-4 api-row">
+          <td class="api api--hidden"><a class="api-link js-api-link" href="{{humanUrl}}">
+            <div class="api-name">{{name}}</div>
+            <div class="api-description"><div>{{description}}</div></div>
+            <div class="api-owner">
+              <hr />
+              {{tenant.description}}
+            </div>
+
+            <div class="overlay js-overlay"></div>
+          </a>
+        </tr>
+      {{/each}}
+    {{/each}}
+    </tbody>
+  </table>

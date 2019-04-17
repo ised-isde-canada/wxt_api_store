@@ -1,0 +1,7 @@
+<?php
+
+// Add a 'language' variable in Twig blocks
+function wxt_api_store_preprocess_block(&$variables) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+}
