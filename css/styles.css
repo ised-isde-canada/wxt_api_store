@@ -427,3 +427,15 @@ div.profileInfo {
     float: left;
     margin-left: 5px;
 }
+
+/* Splash page */
+.path-frontpage .api-store-nav,
+.path-frontpage #wb-info,
+.path-frontpage #block-user-account-block,
+.path-frontpage nav,
+.path-frontpage #wxt-search-block-form,
+.path-frontpage #wb-cont,
+.path-frontpage #navbar,
+.path-frontpage #block-datemodifiedblock {
+    display: none;
+}

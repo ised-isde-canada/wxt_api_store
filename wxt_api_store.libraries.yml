@@ -7,6 +7,7 @@ global-scripts:
   version: 1.x
   js:
     js/sso.js: {}
+    js/utils.js: {}
     js/i18n.js: {}
     # Handlebar
     js/lib/handlebars.runtime.min.js: {}
