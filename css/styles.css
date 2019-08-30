@@ -232,7 +232,7 @@ hr {
 
 .overlay {
 	background: rgba(0,0,0, 0.3) no-repeat center center;
-	background-image: url( "https://api-store-drupal-dev.apps.dev.ocp.ised-isde.canada.ca/sites/api-store-drupal-dev.apps.dev.ocp.ised-isde.canada.ca/files/2019-01/more-button.png" );
+	background-image: url( "/sites/api-store/files/2019-01/more-button.png" );
 	display: none;
 	height: 100%;
 	position: absolute;
