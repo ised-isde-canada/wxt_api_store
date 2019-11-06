@@ -6,6 +6,7 @@
         popInQueueRunning = false,
         $output = $( ".api-listing" ),
         $apiRows, currentView,
+		urlToCall = "/api_store/api_listing?_format=json&lang=",
 
         /**
          * The views currently supported by WET.
@@ -154,7 +155,7 @@
 
         getApisByTenant = function() {
                 $.ajax( {
-                    url: "/api_store/api_listing?_format=json&lang=" + wb.lang,
+                    url: urlToCall + wb.lang,
                     dataType: "json",
                     success: showApis
                 } );
@@ -265,9 +266,7 @@
 
             return nbCols;
         };
-
-    // Only run the following code if there's a container for it...
-    if ( $output.length !== 0 ) {
+	renderList = function (){
         currentView = getCurrentView();
 
         /**
@@ -297,6 +296,16 @@
         $navbar.after( $apiTopContainer );
 
         // Fetch data from API
-        getApisByTenant();
+        getApisByTenant();		
+	};
+    // Only run the following code if there's a container for it...
+    if ( $( ".api-listing" ) !== 0 ) {
+		renderList();
     }
+	else if ( $( ".api-sandboxlisting" ) !== 0 ) {
+		// this is a hack, I am sorry
+		$output = $( ".api-sandboxlisting" );
+		urlToCall = "/api_store/api_sandboxlisting?_format=json&lang=";
+		renderList();
+	}
 }( jQuery ) );
