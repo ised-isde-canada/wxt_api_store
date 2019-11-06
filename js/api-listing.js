@@ -299,10 +299,10 @@
         getApisByTenant();		
 	};
     // Only run the following code if there's a container for it...
-    if ( $( ".api-listing" ) !== 0 ) {
+    if ( $( ".api-listing" ).length !== 0 ) {
 		renderList();
     }
-	else if ( $( ".api-sandboxlisting" ) !== 0 ) {
+	else if ( $( ".api-sandboxlisting" ).length !== 0 ) {
 		// this is a hack, I am sorry
 		$output = $( ".api-sandboxlisting" );
 		urlToCall = "/api_store/api_sandboxlisting?_format=json&lang=";
