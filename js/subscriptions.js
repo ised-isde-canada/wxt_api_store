@@ -1,9 +1,15 @@
 /*global drupalSettings: false, Handlebars: false */
 ( function( $ ) {
     var $container = $( ".api-store__subscriptions" );
-
+	var urlToCall = "/api_store/subscriptions?_format=json&lang=";
     if ( $container.length === 0 ) {
-        return;
+		if ( $( ".api-store__sandboxsubscriptions" ).length === 0){
+			return;	
+		}
+        else{
+			$container = $( ".api-store__sandboxsubscriptions" );
+			urlToCall = "/api_store/sandbox_subscriptions?_format=json&lang="
+		}
     }
 
     Handlebars.registerHelper( "ifSubscribedToTenant", function( applications, options ) {
@@ -40,7 +46,7 @@
 
     if ( isKeycloakUser ) {
         $.ajax( {
-            url: "/api_store/subscriptions?_format=json&lang=" + wb.lang,
+            url: urlToCall + wb.lang,
             dataType: "json",
 
             success: function( json ) {
@@ -61,7 +67,7 @@
                 if ( !hasSubscriptions ) {
                     // No subscriptions
                     $( ".api-store__no-subscriptions" ).show();
-                    $( ".api-store__subscriptions" ).hide();
+                    $container.hide();
                 } else {
                     // Show subscription(s)
                     html = Handlebars.templates.subscriptions( json );
@@ -69,7 +75,7 @@
 
                     $( "#output" ).html( $html );
 
-                    $( ".api-store__subscriptions" ).show();
+                    $container.show();
                 }
             },
 
