@@ -18,3 +18,5 @@ global-scripts:
     # Subscriptions
     js/handlebars/compiled/subscriptions.js: {}
     js/subscriptions.js: {}
+    #support form handler
+    js/support.js: {}
