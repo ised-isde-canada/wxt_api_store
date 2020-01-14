@@ -33,7 +33,7 @@
             .fail(tokenFetchFail)
             .done(function(token, textStatus, jqXHR) {
 
-                data.user = ('user' in drupalSettings && 'uid' in drupalSettings.user) ? dru
+                data.user = ('user' in drupalSettings && 'uid' in drupalSettings.user) ? drupalSettings.user.uid : 'unknown user'
                 let settings = {
                     dataType: 'json',
                     url: "/api_store/jira_submission?_format=json&lang=",
