@@ -47,7 +47,7 @@
 
                 $.ajax(settings)
                     .done(function(data, textStatus, jqXHR) {
-                        window.location.replace(`/${wb.lang}/supportsuccess`)
+                        window.location.replace('/' + wb.lang + '/supportsuccess')
                     })
                     .fail(function(jqXHR, textStatus, errorThrown) {
                         $('#errorFrmSupport').show()
