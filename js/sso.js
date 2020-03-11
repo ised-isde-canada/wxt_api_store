@@ -10,9 +10,13 @@
         return;
     }
 
-    var cookieName = "GCAPIStoreLoggedInState",
+    var cookieName = "GCAPIStoreLoggedInState";
     
-        lang = wb.lang,
+    if (window.location.hostname === "dev.api.canada.ca"){
+        cookieName = "DevGCAPIStoreLoggedInState";
+    }
+    
+    var lang = wb.lang,
 
         isSSOUser = function() {
             return !( typeof drupalSettings.keycloak === "undefined" );
